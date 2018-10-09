@@ -1,0 +1,3 @@
+[submodule "qt-apps-qmllive"]
+	path = qt-apps-qmllive
+	url = https://github.com/qtproject/qt-apps-qmllive.git
