@@ -41,7 +41,10 @@ int main(int argc, char *argv[])
     qDebug() << "workspaceRoot: " << workspaceRoot;
 #endif //
     node.setWorkspace(workspaceRoot,
-                      LiveNodeEngine::AllowUpdates | LiveNodeEngine::UpdatesAsOverlay);
+                      LiveNodeEngine::AllowUpdates
+                      /*| LiveNodeEngine::UpdatesAsOverlay*/ // uncommenting it breaks workspace
+                      );
+
     // Listen to IPC call from remote QmlLive Bench
     RemoteReceiver receiver;
     QObject::connect(&receiver, &RemoteReceiver::activateDocument, [&](const LiveDocument& document) {
